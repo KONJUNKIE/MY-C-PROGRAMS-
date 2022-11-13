@@ -1,0 +1,35 @@
+/*
+Description: To demonstrate the use of the while loop and a user-defined function.
+*/
+#include <stdio.h>
+
+const float pi = 3.1415;                                // this is a global declaration of the value of pi
+                                                        // you may use the define pi 3.1415 version if you want.
+
+float AreaOfCircle(float r);                            // declaration of the user-defined function.
+                                                        // the full code of the user defined function is found below the main() function.
+
+void main()                                             // block for main() function starts here                                         
+{
+    float radius, area;
+    printf("What is the radius: ");
+    scanf("%f",&radius);
+    while (radius>0)
+    {
+        area = AreaOfCircle(radius);                    // to demonstrate the use of user-defined funciton
+        printf("The Area of Circle is %.2f \n\n",area); // printing up to 2 decimal place
+        
+        printf("What is the radius: ");
+        scanf("%f",&radius);
+        
+        printf("\n");
+    }
+    printf("Thank you and see you later. <3");          // you may use your own words here :)
+}                                                       // block for main() function ends here
+
+float AreaOfCircle(float r)                             // user user-defined function with the whole code
+{                                                       // block for the user-defined function starts here
+    float area;                                         // local declaration of the variable
+    area = 3.1415*r*r;                                  // compute for the area
+    return area;                                        // return the result to the calling function, in this case the main() function.
+}                                                       // block for the user-defined functoion ends here
