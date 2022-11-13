@@ -1,0 +1,30 @@
+/*
+Description: C program that accepts input as age, and display the 
+equivalent stage of life using else if ladder.
+*/
+#include <stdio.h>
+
+int main()
+{
+    int age;
+    
+    printf("Enter age: ");
+    scanf("%d",&age);
+    
+    if (age <= 1)
+        printf("Infant");
+    else if (age >= 2 && age <= 4)
+        printf("Toddler");
+    else if (age >= 5 && age <= 12)
+        printf("Child");
+    else if (age >= 13 && age <= 19)
+        printf("Teen");
+    else if (age >= 20 && age <= 39)
+        printf("Adult");
+    else if (age >= 40 && age <= 59)
+        printf("Middle Age Adult");
+    else if (age >= 60)
+        printf("Senior Adult");
+        
+    return 0;
+}
