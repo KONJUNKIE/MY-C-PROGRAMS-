@@ -7,12 +7,12 @@ int
 main ()
 {
   int n;
-  unsigned int answer = 1;	// Answer = 1 means repeat the program.
+  char answer;
 
   do
     {
-      printf ("Input the prefered size of the table: ");	// The program will ask the
-      scanf ("%d", &n);		// user to input the prefered size.
+      printf ("Input the prefered size of the table: "); // The program will ask the
+      scanf ("%d", &n);		                         // user to input the prefered size.
 
       for (int i = 1; i <= n; i++)	// This will fill the values in the table.
 	{
@@ -22,12 +22,15 @@ main ()
 	    }
 	  printf ("\n");
 	}
-
-      printf ("\nDo you want to try again? (1 = Yes/0 = No) ");	// The program will ask the user if the
-      scanf ("%u", &answer);	// user wants to try again.
+      do
+	{
+	  printf ("\nDo you want to try again? (y/n) "); // The program will ask the user if the
+	  scanf ("%s", &answer);	                 // user wants to try again.
+	}
+      while (answer != 'y' && answer != 'n');
 
     }
-  while (answer != 0);
+  while (answer == 'y');
 
   return 0;
 }
