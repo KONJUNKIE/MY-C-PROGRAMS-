@@ -1,27 +1,42 @@
 #include <stdio.h>
-#include <stdio.h>
+
 int main()
 {
-float a,b;
-char c;
-    printf("Sample Calculator \n");
-    printf("Problem: ");
-    scanf("%f%c%f",&a,&c,&b);
-    switch(c)
+    double a,b;
+    char c,answer;
+    
+    do
     {
-    case '+':
-     printf("TOTAL: %.2f",a+b);
-    break;
-    case '-':
-     printf("TOTAL: %.2f",a-b);
-    break;
-    case '*':
-     printf("TOTAL: %.2f",a*b);
-    break;
-    case '/':
-     printf("TOTAL: %.2f",a/b);
-    break;
-    default:
-     printf("ERROR");
-    }
+     printf("\nCalculator");
+     printf("\nProblem: ");
+     scanf("%lf%c%lf",&a,&c,&b);
+    
+     switch(c)
+     {
+     case '+':
+        printf("Answer = %.2f",a+b);break;
+     case '-':
+        printf("Answer = %.2f",a-b);break;
+     case '*':
+        printf("Answer = %.2f",a*b);break;
+     case '/':
+        printf("Answer = %.2f",a/b);break;
+     default:
+        printf("Error/Invalid Problem");break;
+     }
+     
+     printf("\n");
+     
+      do
+      {
+        printf("\nWould you like to try again? y/n: ");
+        scanf("%s",&answer);
+      }
+      while (answer != 'y' && answer != 'n');
+     
+    }while (answer == 'y');
+    
+    return 0;
 }
+
+
